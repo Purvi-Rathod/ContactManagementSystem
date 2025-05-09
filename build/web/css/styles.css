@@ -1,0 +1,126 @@
+/* 
+    Created on : 4 May, 2025, 3:54:32 PM
+    Author     : purvi
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f7fa; /* Light gray background */
+    color: #2f3542; /* Soft, dark text for readability */
+}
+
+/* Header */
+header {
+    background-color: #2d3e50; /* Deep navy blue */
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #2c3e50; /* Subtle border to separate header */
+}
+
+header .header-content h1 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Main container */
+.main-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Intro Section */
+.intro-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro-section h2 {
+    font-size: 32px;
+    color: #34495e; /* Darker grayish-blue */
+    margin-bottom: 10px;
+}
+
+.intro-section p {
+    font-size: 18px;
+    color: #7f8c8d; /* Light gray text */
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Call-to-action buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* Button Styles */
+.cta-buttons a {
+    padding: 16px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+}
+
+/* Unified Button Color (Primary and Secondary) */
+.btn-primary {
+    background-color: #3498db; /* Professional blue */
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-4px); /* Slight lift effect */
+}
+.btn-secondary {
+    background-color: #3498db; /* Professional blue */
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-4px); /* Slight lift effect */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 20px;
+    }
+
+    .intro-section h2 {
+        font-size: 28px;
+    }
+
+    .intro-section p {
+        font-size: 16px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
