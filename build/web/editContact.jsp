@@ -10,64 +10,52 @@
 <html>
 <head>
     <title>Edit Contact</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/edit-styles.css">
 </head>
 <body>
-    </div>
-    <%
-//            String id = (String)session.getAttribute("id");
-            String id = request.getParameter("id");
-            if(id == null)
-            {
-                response.sendRedirect("viewContacts.jsp");
-            }
-        
-            Statement st = DBConnector.getStatement();
-            String query = "SELECT * FROM contacts WHERE id ='"+id+"'";
-            ResultSet rs = st.executeQuery(query);
-        
-            while(rs.next())
-            {
-        %>
-        <h1>Edit Contact</h1>
-        <form action="EditContactServlet" method="post">
-                <table  border='0' width='320px' align="center">
-                    <tr> <td>&nbsp;</td> </tr>
-                    <tr>
-			<td align='center'>ID :</td>
-                        <td><input type='text' name="id" value="<%=rs.getString(1)%>"></td>
-                    </tr>
-		
-                    <tr>
-                        <td align='center'><b>Name :</b></td>
-                        <td><input type='text' name="name" value="<%=rs.getString(2)%>"></td>
-                    </tr>
-		
-                    <tr>
-                        <td align="center"><B>Phone :</B></td>
-                        <td><input type='text' name="phone" value="<%=rs.getString(3)%>"></td>
-                    </tr>
-                    
-                    <tr>
-                        <td align='center'><b>Email :</b></td>
-                        <td><input type="text" name="email" value="<%=rs.getString(4)%>"></td>
-                    </tr>
+    <div class="container">
+        <h2>Edit Contact</h2>
         <%
+            String id = request.getParameter("id");
+            if (id == null) {
+                response.sendRedirect("viewContacts.jsp");
+                return;
+            }
+
+            Statement st = DBConnector.getStatement();
+            String query = "SELECT * FROM contacts WHERE id ='" + id + "'";
+            ResultSet rs = st.executeQuery(query);
+
+            if (rs.next()) {
+        %>
+        <form action="EditContactServlet" method="post">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" name="id" id="id" value="<%=rs.getString(1)%>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="<%=rs.getString(2)%>" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" name="phone" id="phone" value="<%=rs.getString(3)%>" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="<%=rs.getString(4)%>" required>
+            </div>
+            <div class="button-group">
+                <button type="submit">Update Contact</button>
+                <a href="index.jsp">Back to Home</a>
+            </div>
+        </form>
+        <%
+            } else {
+                response.sendRedirect("editFail.jsp");
             }
         %>
-		<table border='0' width='320px' align='center'>
-                    <tr>
-    			<td align='center'>
-                            <input type="submit" name="Submit" value="Update Contact" >
-                        </td>
-                        <td>
-                            <a href="index.jsp" class="btn">Back to Home</a>
-                        </td>
-                    </tr>
-	
-                    <tr> <td>&nbsp;</td> </tr>
-		</table>	
-                </table>
-            </form>
+    </div>
 </body>
 </html>

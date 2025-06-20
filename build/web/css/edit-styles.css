@@ -1,0 +1,217 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 Jun, 2025, 11:24:40 PM
+    Author     : purvi
+*/
+
+/* Global styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 16px;
+}
+
+/* Container for forms and error pages */
+.container {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 320px;
+}
+
+/* Heading */
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.form-group input[readonly] {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group input::placeholder {
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+/* Button group */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.button-group button,
+.button-group a {
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-group button {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.button-group button:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button-group a {
+    background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+    color: #1f2937;
+}
+
+.button-group a:hover {
+    background: linear-gradient(135deg, #d1d5db 0%, #9ca3af 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Error page specific styles */
+.error-container {
+    text-align: center;
+}
+
+.error-message {
+    font-size: 16px;
+    color: #dc2626;
+    margin-bottom: 24px;
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+    .container {
+        max-width: 384px;
+        padding: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .form-group label {
+        font-size: 16px;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+
+    .button-group {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .button-group button,
+    .button-group a {
+        padding: 12px 20px;
+        font-size: 16px;
+        flex: 1;
+    }
+
+    .error-message {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 448px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 512px;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .form-group input {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .form-group input::placeholder {
+        font-size: 12px;
+    }
+
+    .button-group button,
+    .button-group a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .error-message {
+        font-size: 14px;
+    }
+}

@@ -7,55 +7,34 @@
 <html>
 <head>
     <title>Add Contact</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/addContact.css">
 </head>
 <body>
-    
-    <center>
-            <form action="AddContactServle" method="post">
-                <table  border='0' width='320px' align="center">
-                    <center>
-                        <tr>
-                            <td align="center"><strong>Add New Contact</strong></td>
-                        </tr>
-                    </center>
-                <table  border='0' width='320px' align="center">
-                    <tr>
-                        <td align='center'><b>ID :</b></td>
-                        <td><input type='text' name="id" placeholder="Enter ID"></td>
-                    </tr>
-		
-                    <tr>
-                        <td align='center'><b>Name :</b></td>
-                        <td><input type='text' name="name" placeholder="Enter Name"></td>
-                    </tr>
-		
-                    <tr>
-                        <td align='center'><b>Phone :</b></td>
-                        <td><input type="text" name="phone" placeholder="Phone No. 147-147-1245 "></td>
-                    </tr>
-		
-                    <tr>
-                        <td align="center"><B>Email :</B></td>
-                        <td><input type='text' name="email" placeholder="email@example.com"></td>
-                    </tr>
-		
-		<table border='0' width='320px' align='center'>
-                    <tr>
-    			<td align='center'>
-                            <input type="submit" name="Submit" value="Add Contact" >
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align = 'center'>
-                            <a href="index.jsp" class="btn">Back to Home</a>
-                        </td>
-                    </tr>
-                    <tr> <td>&nbsp;</td> </tr>
-		</table>	
-                </table>
-                </table>
-            </form>
-    </center>
+    <div class="container">
+        <h2>Add New Contact</h2>
+        <form action="AddContactServle" method="post">
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" name="id" id="id" placeholder="Enter ID" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter Name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" name="phone" id="phone" placeholder="147-147-1245" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="email@example.com" required>
+            </div>
+            <div class="button-group">
+                <button type="submit">Add Contact</button>
+                <a href="index.jsp">Back to Home</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
